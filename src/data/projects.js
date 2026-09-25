@@ -74,7 +74,7 @@ export const projects = [
       'AI assistance only — not BIS. Every result is labelled as AI recommendation and needs checking against official BIS sources. Dataset is a labelled demo dataset.',
     repo: 'https://github.com/rajaryan1111/indian-standards-procurement-ai',
     demo: 'https://indian-standards-procurement-ai.vercel.app/',
-    image: '/projects/is-copilot/evidence.webp',
+    image: '/projects/is-copilot/dashboard.webp',
     imageAlt: 'IS Copilot dashboard — live application screenshot',
     imagePosition: '50% 0%',
     gallery: [
