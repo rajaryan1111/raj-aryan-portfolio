@@ -265,8 +265,8 @@ export default function Projects() {
           <p className="eyebrow">Work</p>
           <h2 className="section-title">Projects</h2>
           <p className="section-sub">
-            IS Copilot is the project I spent the most time on — it’s live and you can try it. The other two are
-            solid builds, and the rest are smaller things I learned from.
+            IS Copilot is the project I spent the most time on — it’s live and you can try it. The next two show how I work on
+            full-stack AI and agent systems; the rest are supporting builds.
           </p>
         </header>
 
