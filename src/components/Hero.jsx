@@ -25,10 +25,7 @@ export default function Hero() {
         </h1>
 
         <p className="hero__copy">
-          I’m a student engineer in Bengaluru. I build <b>RAG apps that can explain their answers</b>,{' '}
-          <b>agents that can see and act</b>, <b>vision pipelines that work in bad lighting</b>, and the{' '}
-          <b>backend + frontend</b> to make them usable. I like working on the parts around the model — retrieval,
-          APIs, evaluation, and interfaces.
+          I’m a student engineer in Bengaluru. I build <b>RAG apps with explainable retrieval</b>, <b>agents that can see and act</b>, <b>computer-vision pipelines for messy inputs</b>, and the <b>backend + frontend</b> around them. I like working on the parts around the model — retrieval, APIs, evaluation, and interfaces.
         </p>
 
         <div className="hero__cta">
