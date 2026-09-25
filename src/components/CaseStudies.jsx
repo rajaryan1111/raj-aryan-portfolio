@@ -14,7 +14,7 @@ function Block({ label, children }) {
 function Gallery({ project }) {
   if (!project.gallery || project.gallery.length === 0) return null
   return (
-    <Block label="Screenshots — from the live app">
+    <Block label="Product screenshots">
       <div className="evidence-grid">
         {project.gallery.map((g) => (
           <figure key={g.src} className="evidence-item">
