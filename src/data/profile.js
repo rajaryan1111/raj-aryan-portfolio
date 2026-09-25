@@ -5,7 +5,7 @@ export const profile = {
   headlineTop: 'BUILDING AI SYSTEMS',
   headlineBottom: 'THAT ACTUALLY SHIP.',
   summary:
-    'B.Tech ECE student building RAG apps, agents, and vision systems that actually work — with the backend and frontend to make them usable.',
+    'B.Tech Electronics student building RAG apps, agents, and vision systems that actually work — with the backend and frontend to make them usable.',
   location: 'Bengaluru, India',
   education: 'B.Tech — Electronics & Communication Engineering',
   status: 'Looking for AI/ML internships',
