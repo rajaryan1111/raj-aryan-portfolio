@@ -11,7 +11,7 @@ export default function Hero() {
           <span aria-hidden="true">/</span>
           <span>{profile.role}</span>
           <span aria-hidden="true">/</span>
-          <span>B.Tech Electronics</span>
+          <span>B.E. Electronics</span>
         </p>
 
         <h1 className="hero__title">
