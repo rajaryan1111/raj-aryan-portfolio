@@ -212,8 +212,7 @@ export default function CaseStudies() {
           <p className="eyebrow">Details</p>
           <h2 className="section-title">How I built them</h2>
           <p className="section-sub">
-            Short version on the cards, longer version here if you want it. All from the actual repos — no invented
-            numbers.
+            Short version on the cards, longer version here if you want to see how the systems were put together.
           </p>
         </header>
 
