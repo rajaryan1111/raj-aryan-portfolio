@@ -7,10 +7,10 @@ export default function Contact() {
       <div className="shell">
         <div className="contact">
           <p className="eyebrow">Contact</p>
-          <h2>Open to internships and interesting projects</h2>
+          <h2>Open to AI/ML internships and interesting projects</h2>
           <p>
-            I’m looking for AI/ML engineering internships where I can work on real systems — RAG, agents, vision, and
-            the backend to make them usable. If that sounds like your team, let’s talk.
+            I’m looking for an AI/ML engineering internship where I can work on real systems — RAG, agents, vision,
+            and the backend that makes them usable. I’m also open to interesting technical projects and collaborations.
           </p>
 
           <div className="contact__actions">
