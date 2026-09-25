@@ -1664,3 +1664,26 @@ p {
   outline: 2px solid var(--signal);
   outline-offset: -2px;
 }
+
+
+.pcard__proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 2px 0 4px;
+}
+
+.pcard__proof span {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 7px 9px;
+  color: var(--text-tertiary);
+  font-size: 12px;
+  font-family: var(--mono);
+}
+
+.pcard__proof b {
+  color: var(--text-primary);
+  font-weight: 600;
+}
