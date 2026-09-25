@@ -257,6 +257,11 @@ export const projects = [
       'Worked on color-science and ML reading pipeline.',
       'Worked on FastAPI backend and React dashboard.',
     ],
+    evaluation: [
+      'Random Forest regression: Test R² ≈ 0.863, RMSE ≈ 11.37 ppm·hr, MAE ≈ 8.89 ppm·hr.',
+      'Cross-validation R² ≈ 0.915 on the current evaluation data.',
+      'FastAPI: 49/49 API tests passing; offline checks: 16/16.',
+    ],
     disclaimer: 'Hackathon prototype. No safety certification. Uses synthetic data for ML eval.',
     repo: 'https://github.com/rajaryan1111/SIH-H2S-Dosimeter',
     repoNote: 'Fork of team repo RajanKumar44/SIH-H2S-Dosimeter',
@@ -387,7 +392,7 @@ export const otherWork = [
   {
     name: 'GraphOne Intelligence Pipeline',
     description:
-      'Async ingestion for research papers, startups, products, news, jobs. Handles retries, worker pools, idempotent writes, validation, and multi-provider LLM fallback. Built to not lose data silently.',
+      'Async ingestion and intelligence pipeline with retries, worker pools, idempotent writes, validation, and multi-provider LLM fallback. The test suite includes 180+ Pytest tests.',
     tech: ['Python', 'Async', 'PostgreSQL', 'Docker'],
     repo: 'https://github.com/rajaryan1111/graphone-intelligence-pipeline',
   },
