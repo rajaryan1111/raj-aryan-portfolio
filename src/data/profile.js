@@ -5,9 +5,9 @@ export const profile = {
   headlineTop: 'BUILDING AI SYSTEMS END TO END',
   headlineBottom: 'FROM MODEL TO INTERFACE.',
   summary:
-    'B.Tech Electronics student building RAG apps, agents, and vision systems that actually work — with the backend and frontend to make them usable.',
+    'B.E. Electronics student building RAG apps, agents, and vision systems end to end — with the backend and frontend to make them usable.',
   location: 'Bengaluru, India',
-  education: 'B.Tech — Electronics',
+  education: 'B.E. — Electronics & Telecommunication Engineering',
   github: 'https://github.com/rajaryan1111',
   linkedin: 'https://www.linkedin.com/in/raj-aryan-20aa32394/',
   email: '',
