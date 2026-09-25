@@ -1640,3 +1640,27 @@ p {
     padding: 20px;
   }
 }
+
+
+/* Clickable project screenshots */
+.pcard__media--clickable,
+.pcard__gallery-thumb--clickable {
+  cursor: zoom-in;
+}
+
+.pcard__media--clickable img,
+.pcard__gallery-thumb--clickable img {
+  transition: transform 0.22s var(--ease), filter 0.22s var(--ease);
+}
+
+.pcard__media--clickable:hover img,
+.pcard__gallery-thumb--clickable:hover img {
+  transform: scale(1.015);
+  filter: brightness(1.04);
+}
+
+.pcard__media--clickable:focus-visible,
+.pcard__gallery-thumb--clickable:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: -2px;
+}
