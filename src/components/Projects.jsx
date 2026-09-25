@@ -132,11 +132,6 @@ function FlagshipCard({ project }) {
           </a>
         </div>
 
-        <p className="pcard__note">
-          Real screenshots expected at <code>public/projects/is-copilot/</code>: dashboard.png (main), recommendations.png,
-          relationship-graph.png, standards-explorer.png — captured from the live Vercel deployment. UI falls back to
-          abstract placeholder if files are missing; no fake screenshot is generated.
-        </p>
       </div>
     </article>
   )
@@ -237,7 +232,7 @@ export default function Projects() {
           <p className="eyebrow">Selected work</p>
           <h2 className="section-title">Projects</h2>
           <p className="section-sub">
-            Flagship first. IS Copilot is the primary case study with real product evidence from its live deployment.
+            Flagship first. IS Copilot is the primary case study, with its live demo linked for direct product inspection.
             Two additional strong systems follow, then secondary work in a compact, scannable format.
           </p>
         </header>
