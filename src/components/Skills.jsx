@@ -8,7 +8,7 @@ export default function Skills() {
           <p className="eyebrow">Stack</p>
           <h2 className="section-title">What I actually use</h2>
           <p className="section-sub">
-            Everything here shows up in the projects above. Nothing added just to fill space.
+            The tools I reach for across these projects.
           </p>
         </header>
 
