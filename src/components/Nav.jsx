@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { navLinks, profile } from '../data/profile'
-import { CloseIcon, GitHubIcon, MenuIcon } from './Icons'
+import { ArrowUpRightIcon, CloseIcon, GitHubIcon, MenuIcon } from './Icons'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -68,6 +68,15 @@ export default function Nav() {
 
         <div className="nav__actions">
           <a
+            className="btn btn--ghost"
+            href={profile.resume}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Resume
+            <ArrowUpRightIcon width="14" height="14" />
+          </a>
+          <a
             className="btn btn--ghost btn--github"
             href={profile.github}
             target="_blank"
@@ -96,6 +105,16 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
+          <a
+            className="btn btn--primary"
+            href={profile.resume}
+            target="_blank"
+            rel="noreferrer noopener"
+            onClick={() => setOpen(false)}
+          >
+            Resume
+            <ArrowUpRightIcon width="14" height="14" />
+          </a>
           <a
             className="btn btn--primary"
             href={profile.github}
