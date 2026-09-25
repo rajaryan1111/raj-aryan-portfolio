@@ -99,7 +99,7 @@ function MainCard({ project }) {
 
         <div className="pcard__proof" aria-label="Project proof">
           <span><b>876</b> indexed demo standards</span>
-          <span><b>53</b> tests documented in the repo</span>
+          <span><b>53</b> tests passing</span>
           <span><b>Live</b> deployed demo</span>
         </div>
 
