@@ -2,8 +2,8 @@ export const profile = {
   name: 'Raj Aryan',
   role: 'AI/ML Engineer',
   initials: 'RA',
-  headlineTop: 'BUILDING AI SYSTEMS',
-  headlineBottom: 'THAT ACTUALLY SHIP.',
+  headlineTop: 'BUILDING AI SYSTEMS END TO END',
+  headlineBottom: 'FROM MODEL TO INTERFACE.',
   summary:
     'B.Tech Electronics student building RAG apps, agents, and vision systems that actually work — with the backend and frontend to make them usable.',
   location: 'Bengaluru, India',
