@@ -19,7 +19,19 @@ function Media({ project, wide }) {
 
   if (project.image) {
     return (
-      <div className={`pcard__media ${wide ? 'pcard__media--wide' : ''}`}>
+      <div
+        className={`pcard__media ${wide ? 'pcard__media--wide' : ''} pcard__media--clickable`}
+        role="button"
+        tabIndex={0}
+        aria-label={`Open ${project.name} live demo`}
+        onClick={() => window.open(project.demo || project.image, '_blank', 'noopener,noreferrer')}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            window.open(project.demo || project.image, '_blank', 'noopener,noreferrer')
+          }
+        }}
+      >
         <img
           src={project.image}
           alt={project.imageAlt}
@@ -97,7 +109,19 @@ function MainCard({ project }) {
           <div className="pcard__gallery" aria-label={`${project.name} screenshots`}>
             {project.gallery.slice(1).map((g) => (
               <figure key={g.src} className="pcard__gallery-item">
-                <div className="pcard__gallery-thumb">
+                <div
+                  className="pcard__gallery-thumb pcard__gallery-thumb--clickable"
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Open ${g.label} screenshot`}
+                  onClick={() => window.open(g.src, '_blank', 'noopener,noreferrer')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      window.open(g.src, '_blank', 'noopener,noreferrer')
+                    }
+                  }}
+                >
                   <img
                     src={g.src}
                     alt={g.alt}
