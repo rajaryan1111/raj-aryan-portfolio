@@ -128,6 +128,7 @@ function MainCard({ project }) {
             Details
           </a>
         </div>
+
       </div>
     </article>
   )
