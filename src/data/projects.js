@@ -74,34 +74,9 @@ export const projects = [
       'AI assistance only — not BIS. Every result is labelled as AI recommendation and needs checking against official BIS sources. Dataset is a labelled demo dataset.',
     repo: 'https://github.com/rajaryan1111/indian-standards-procurement-ai',
     demo: 'https://indian-standards-procurement-ai.vercel.app/',
-    image: '/projects/is-copilot/dashboard.png',
-    imageAlt: 'IS Copilot dashboard',
-    gallery: [
-      {
-        src: '/projects/is-copilot/dashboard.png',
-        label: 'Dashboard',
-        alt: 'IS Copilot dashboard',
-        role: 'Main view',
-      },
-      {
-        src: '/projects/is-copilot/recommendations.png',
-        label: 'Recommendations',
-        alt: 'Recommendations with evidence',
-        role: 'With evidence snippets',
-      },
-      {
-        src: '/projects/is-copilot/relationship-graph.png',
-        label: 'Relationship Graph',
-        alt: 'Standards relationship graph',
-        role: 'Shows how standards connect',
-      },
-      {
-        src: '/projects/is-copilot/standards-explorer.png',
-        label: 'Standards Explorer',
-        alt: 'Standards explorer',
-        role: 'Browse and filter',
-      },
-    ],
+    image: null,
+    imageAlt: null,
+    gallery: [],
   },
 
   {
@@ -219,7 +194,6 @@ export const projects = [
     contribution: ['Built end to end — voice, routing, LLM, RAG, vision, automation, HUD.'],
     disclaimer: 'Personal project, macOS only, not packaged for distribution.',
     repo: 'https://github.com/rajaryan1111/jarvis-assistant',
-    repoNote: 'Previously a1creator284/jarvis-assistant',
     demo: null,
     image: null,
     imageAlt: null,
@@ -398,7 +372,6 @@ export const projects = [
     ],
     disclaimer: 'Portfolio/hackathon project, not a deployed product.',
     repo: 'https://github.com/rajaryan1111/AI_resume_review',
-    repoNote: 'Previously a1creator284/AI_resume_review',
     demo: null,
     image: null,
     imageAlt: null,
