@@ -1,7 +1,7 @@
 /**
  * Project data — rewritten to sound like a real engineer explaining his work.
  * All repo URLs verified 2026-09-25. No invented metrics.
- * IS Copilot screenshots are pulled from the live deployment through a screenshot URL;
+ * IS Copilot screenshots are committed product captures from the deployed application;
  * they are real application views, not mockups.
  */
 
