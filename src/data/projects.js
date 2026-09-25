@@ -74,32 +74,15 @@ export const projects = [
       'AI assistance only — not BIS. Every result is labelled as AI recommendation and needs checking against official BIS sources. Dataset is a labelled demo dataset.',
     repo: 'https://github.com/rajaryan1111/indian-standards-procurement-ai',
     demo: 'https://indian-standards-procurement-ai.vercel.app/',
-    image:
-      'https://image.thum.io/get/width/1200/crop/700/allowJPG/https://indian-standards-procurement-ai.vercel.app/',
+    image: '/projects/is-copilot/evidence.webp',
     imageAlt: 'IS Copilot dashboard — live application screenshot',
+    imagePosition: '50% 0%',
     gallery: [
-      {
-        src: 'https://image.thum.io/get/width/1200/crop/700/allowJPG/https://indian-standards-procurement-ai.vercel.app/',
-        alt: 'IS Copilot dashboard',
-        label: 'Dashboard',
-      },
-      {
-        src: 'https://image.thum.io/get/width/1200/crop/700/allowJPG/https://indian-standards-procurement-ai.vercel.app/results/55615229-1279-49d4-b48e-1e6ae9ee870d',
-        alt: 'IS Copilot analysis and recommendation results',
-        label: 'Recommendation results',
-      },
-      {
-        src: 'https://image.thum.io/get/width/1200/crop/700/allowJPG/https://indian-standards-procurement-ai.vercel.app/graph/55615229-1279-49d4-b48e-1e6ae9ee870d',
-        alt: 'IS Copilot standards relationship graph',
-        label: 'Relationship graph',
-      },
-      {
-        src: 'https://image.thum.io/get/width/1200/crop/700/allowJPG/https://indian-standards-procurement-ai.vercel.app/explorer',
-        alt: 'IS Copilot standards explorer',
-        label: 'Standards explorer',
-      },
-    ],
-  },
+      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot dashboard', label: 'Dashboard', objectPosition: '50% 0%' },
+      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot analysis and recommendation results', label: 'Recommendation results', objectPosition: '50% 33.333%' },
+      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot standards relationship graph', label: 'Relationship graph', objectPosition: '50% 66.667%' },
+      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot standards explorer', label: 'Standards explorer', objectPosition: '50% 100%' },
+    ],  },
 
   {
     id: 'ai-adaptive-onboarding',
