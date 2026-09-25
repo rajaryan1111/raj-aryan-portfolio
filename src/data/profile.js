@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Raj Aryan',
-  role: 'AI/ML Engineer',
+  role: 'AI/ML Engineer · Student',
   initials: 'RA',
   headlineTop: 'BUILDING AI SYSTEMS END TO END',
   headlineBottom: 'FROM MODEL TO INTERFACE.',
