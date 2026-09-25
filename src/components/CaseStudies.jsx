@@ -22,6 +22,7 @@ function Gallery({ project }) {
               <img
                 src={g.src}
                 alt={g.alt}
+                style={{ objectPosition: g.objectPosition || '50% 50%' }}
                 loading="lazy"
                 decoding="async"
                 width={800}
