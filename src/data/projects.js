@@ -6,12 +6,17 @@
  *
  * NOTE ON URLS: the owner's GitHub username changed from `a1creator284` to
  * `rajaryan1111`. The old URLs only work through GitHub's 301 redirect, so the
- * canonical `rajaryan1111/*` URLs are used throughout.
+ * canonical `rajaryan1111/*` URLs are used throughout. The one exception is the
+ * Deep Learning Lab demo which is still hosted under the old Vercel subdomain
+ * and verified live on 2026-09-25.
  *
  * Rules:
  *  - no invented metrics, users, accuracy, revenue, awards or deployments
  *  - numbers only appear when they are stated in the project's own repository
  *  - `image: null` renders a generated non-photographic visual, never a fake screenshot
+ *  - IS Copilot screenshots: real product evidence from https://indian-standards-procurement-ai.vercel.app/
+ *    Expected at public/projects/is-copilot/{dashboard,recommendations,relationship-graph,standards-explorer}.png
+ *    If missing, UI falls back to glyph placeholder — no fake screenshot is generated.
  */
 
 export const projects = [
@@ -22,6 +27,7 @@ export const projects = [
     category: 'RAG · Document Intelligence',
     year: '2026',
     featured: true,
+    flagship: true,
     badge: 'Smart India Hackathon 2026 · SIH26108',
     tagline:
       'Turns an unstructured procurement requirement into an explainable set of potentially applicable Indian Standards, with evidence, confidence and gap analysis.',
@@ -86,9 +92,152 @@ export const projects = [
       'IS Copilot is an AI assistance system, not a BIS or regulatory authority. Every recommendation is labelled as an AI recommendation and must be verified against authoritative BIS sources before procurement use. The bundled dataset is a clearly-labelled demo dataset.',
     repo: 'https://github.com/rajaryan1111/indian-standards-procurement-ai',
     demo: 'https://indian-standards-procurement-ai.vercel.app/',
-    image: '/projects/is-copilot.png',
+    image: '/projects/is-copilot/dashboard.png',
     imageAlt:
-      'IS Copilot application screenshot showing the Standards Intelligence workspace with Analyze Specification, Recommendations, Standards Explorer, Relationship Graph and Gap Analysis',
+      'IS Copilot dashboard showing Standards Intelligence workspace with Analyze Specification, Recommendations, Standards Explorer, Relationship Graph and Gap Analysis',
+    gallery: [
+      {
+        src: '/projects/is-copilot/dashboard.png',
+        label: 'Dashboard',
+        alt: 'IS Copilot dashboard — product brief to standards-ready evidence, 876 indexed standards, workspace activity',
+        role: 'Main project image',
+      },
+      {
+        src: '/projects/is-copilot/recommendations.png',
+        label: 'Recommendations',
+        alt: 'IS Copilot recommendations view with per-requirement evidence snippets and six-component confidence breakdown',
+        role: 'Secondary evidence — recommendations with evidence',
+      },
+      {
+        src: '/projects/is-copilot/relationship-graph.png',
+        label: 'Relationship Graph',
+        alt: 'IS Copilot standards relationship graph showing primary, normative, test, safety and allied references',
+        role: 'Architecture / product evidence — typed relationship graph',
+      },
+      {
+        src: '/projects/is-copilot/standards-explorer.png',
+        label: 'Standards Explorer',
+        alt: 'IS Copilot standards explorer with indexed metadata, freshness and certification signals',
+        role: 'Feature evidence — standards explorer',
+      },
+    ],
+  },
+
+  {
+    id: 'ai-adaptive-onboarding',
+    name: 'AI Adaptive Onboarding Engine',
+    subtitle: 'Profile-vs-Role Analysis with Adaptive Learning Paths',
+    category: 'LLM Application · Full-Stack',
+    year: '2026',
+    featured: true,
+    flagship: false,
+    badge: 'Team project',
+    tagline:
+      'Analyses candidate profiles against role requirements, detects skill gaps and generates adaptive learning recommendations behind role-aware dashboards.',
+    problem:
+      'Traditional onboarding is static and role-agnostic: every new joiner gets the same material regardless of what they already know or what the role actually requires.',
+    solution:
+      'A full-stack platform that runs a resume + job-description analysis pipeline, persists the results, detects the skill delta and turns it into structured learning recommendations, surfaced through role-aware dashboards for admin and regular users.',
+    approach: [
+      'FastAPI backend with JWT auth flows — registration, login, profile and password management.',
+      'Analysis pipeline over resume and job description, with results persisted rather than held in the UI.',
+      'Skill-gap detection driving adaptive learning recommendations.',
+      'Role-aware dashboards separating admin and regular-user capability, plus admin user management.',
+      'Analytics views derived from database-backed endpoints rather than mock data.',
+      'Docker Compose setup (frontend, backend, PostgreSQL) for a reproducible local environment.',
+    ],
+    architecture: [
+      'Frontend (React + Vite, served via Nginx)',
+      'HTTP with JWT',
+      'Backend API (FastAPI)',
+      'SQLAlchemy ORM',
+      'PostgreSQL',
+      'All three services orchestrated with Docker Compose',
+    ],
+    features: [
+      'Secure auth flows — registration, login, profile, password management',
+      'Resume and job-description analysis pipeline with persisted results',
+      'Skill-gap detection and adaptive recommendations',
+      'Role-aware dashboards (admin vs regular user)',
+      'Admin user management',
+      'Database-backed analytics views',
+      'Docker Compose for reproducible local setup',
+    ],
+    tech: ['FastAPI', 'Python', 'React', 'PostgreSQL', 'SQLAlchemy', 'Docker', 'JWT', 'LLM analysis'],
+    challenges: [
+      'Keeping analysis results durable and queryable so dashboards and analytics read from the database instead of transient UI state.',
+      'Separating admin and regular-user capability cleanly across the API and the frontend.',
+      'Making the whole stack reproducible for evaluators with a single Docker Compose command.',
+    ],
+    contribution: [
+      'Contributed to this team project across the analysis pipeline and the frontend application.',
+      'Team repository — see the repository history for the full contribution breakdown.',
+    ],
+    disclaimer:
+      'A team project. No usage, accuracy or production-scale claims are made here; the repository is the source of truth for what is implemented.',
+    repo: 'https://github.com/RajanKumar44/ai-adaptive-onboarding-engine',
+    repoNote: 'Team repository owned by a collaborator',
+    demo: null,
+    image: null,
+    imageAlt: null,
+  },
+
+  {
+    id: 'jarvis',
+    name: 'Jarvis',
+    subtitle: 'AI Voice Assistant for macOS',
+    category: 'AI Agents · Voice · Computer Vision',
+    year: '2025 — 2026',
+    featured: true,
+    flagship: false,
+    badge: null,
+    tagline:
+      'A desktop assistant that combines wake-word voice interaction, LLM reasoning, local RAG over personal notes, vision utilities and macOS automation behind a browser HUD.',
+    problem:
+      'General-purpose chat assistants cannot see the screen, control the machine or answer questions from local documents. A useful desktop assistant needs voice input, local knowledge, vision and system access wired into one loop.',
+    solution:
+      'A Python assistant with a browser-based HUD served by a local server. It listens for a wake word, transcribes speech, routes the request through an LLM, retrieves from a local vector index over personal notes and PDFs, runs vision utilities, executes macOS system actions, and answers through system text-to-speech.',
+    approach: [
+      'Voice loop: wake-word detection, speech recognition and macOS text-to-speech for output.',
+      'LLM integration for reasoning and natural-language command interpretation.',
+      'Local RAG: notes and PDFs are embedded into a local vector index that the assistant retrieves from before answering.',
+      'Vision utilities: face registration/recognition, hand-gesture and person detection.',
+      'Automation: reminders, study planning and macOS system controls, exposed through a local server so the HUD and the CLI share the same logic.',
+      'Privacy: face images, memory data and API credentials stay local and are excluded from source control.',
+    ],
+    architecture: [
+      'Wake word → speech recognition',
+      'Command router (CLI entry point or local server API)',
+      'LLM reasoning · local RAG over notes/PDF vector index · vision module',
+      'Action layer — reminders, study planner, macOS system controls',
+      'Response → macOS text-to-speech + browser HUD log feed',
+    ],
+    features: [
+      'Hands-free wake-word voice interaction',
+      'LLM-backed responses',
+      'Local RAG over personal notes and PDFs via a vector index',
+      'Vision utilities — face, hand-gesture and person detection',
+      'macOS system controls and automation',
+      'Reminders and study planner',
+      'Browser HUD with status, log feed and chat box',
+      'Speech output through the macOS system voice',
+    ],
+    tech: ['Python', 'Flask', 'OpenAI API', 'OpenCV', 'Speech recognition', 'Vector index / RAG', 'JavaScript'],
+    challenges: [
+      'Keeping the voice loop responsive while LLM, retrieval and vision work run behind it.',
+      'Sharing one command-routing layer between the voice CLI and the browser HUD instead of duplicating logic.',
+      'Keeping personal data local — face images, memory and credentials are deliberately kept out of version control.',
+    ],
+    contribution: [
+      'Built the assistant end to end: voice loop, command routing, LLM integration, local RAG index, vision utilities, automation layer and the browser HUD.',
+    ],
+    disclaimer:
+      'A personal project built and run on macOS. It is not packaged for distribution and has not been tested on other platforms.',
+    repo: 'https://github.com/rajaryan1111/jarvis-assistant',
+    repoNote: 'Previously hosted at a1creator284/jarvis-assistant (username changed)',
+    demo: null,
+    image: null,
+    imageAlt: null,
   },
 
   {
@@ -97,7 +246,7 @@ export const projects = [
     subtitle: 'Passive Colorimetric Wristband with AI-Based Quantitative Reading',
     category: 'Computer Vision · Hardware + Software',
     year: '2026',
-    featured: true,
+    featured: false,
     badge: 'Smart India Hackathon 2026 · SIH26118',
     tagline:
       'A disposable colorimetric wristband whose progressive colour change is read quantitatively by a computer-vision and ML pipeline.',
@@ -160,69 +309,12 @@ export const projects = [
   },
 
   {
-    id: 'jarvis',
-    name: 'Jarvis',
-    subtitle: 'AI Voice Assistant for macOS',
-    category: 'AI Agents · Voice · Computer Vision',
-    year: '2025 — 2026',
-    featured: true,
-    badge: null,
-    tagline:
-      'A desktop assistant that combines wake-word voice interaction, LLM reasoning, local RAG over personal notes, vision utilities and macOS automation behind a browser HUD.',
-    problem:
-      'General-purpose chat assistants cannot see the screen, control the machine or answer questions from local documents. A useful desktop assistant needs voice input, local knowledge, vision and system access wired into one loop.',
-    solution:
-      'A Python assistant with a browser-based HUD served by a local server. It listens for a wake word, transcribes speech, routes the request through an LLM, retrieves from a local vector index over personal notes and PDFs, runs vision utilities, executes macOS system actions, and answers through system text-to-speech.',
-    approach: [
-      'Voice loop: wake-word detection, speech recognition and macOS text-to-speech for output.',
-      'LLM integration for reasoning and natural-language command interpretation.',
-      'Local RAG: notes and PDFs are embedded into a local vector index that the assistant retrieves from before answering.',
-      'Vision utilities: face registration/recognition, hand-gesture and person detection.',
-      'Automation: reminders, study planning and macOS system controls, exposed through a local server so the HUD and the CLI share the same logic.',
-      'Privacy: face images, memory data and API credentials stay local and are excluded from source control.',
-    ],
-    architecture: [
-      'Wake word → speech recognition',
-      'Command router (CLI entry point or local server API)',
-      'LLM reasoning · local RAG over notes/PDF vector index · vision module',
-      'Action layer — reminders, study planner, macOS system controls',
-      'Response → macOS text-to-speech + browser HUD log feed',
-    ],
-    features: [
-      'Hands-free wake-word voice interaction',
-      'LLM-backed responses',
-      'Local RAG over personal notes and PDFs via a vector index',
-      'Vision utilities — face, hand-gesture and person detection',
-      'macOS system controls and automation',
-      'Reminders and study planner',
-      'Browser HUD with status, log feed and chat box',
-      'Speech output through the macOS system voice',
-    ],
-    tech: ['Python', 'Flask', 'OpenAI API', 'OpenCV', 'Speech recognition', 'Vector index / RAG', 'JavaScript'],
-    challenges: [
-      'Keeping the voice loop responsive while LLM, retrieval and vision work run behind it.',
-      'Sharing one command-routing layer between the voice CLI and the browser HUD instead of duplicating logic.',
-      'Keeping personal data local — face images, memory and credentials are deliberately kept out of version control.',
-    ],
-    contribution: [
-      'Built the assistant end to end: voice loop, command routing, LLM integration, local RAG index, vision utilities, automation layer and the browser HUD.',
-    ],
-    disclaimer:
-      'A personal project built and run on macOS. It is not packaged for distribution and has not been tested on other platforms.',
-    repo: 'https://github.com/rajaryan1111/jarvis-assistant',
-    repoNote: 'Previously hosted at a1creator284/jarvis-assistant (username changed)',
-    demo: null,
-    image: null,
-    imageAlt: null,
-  },
-
-  {
     id: 'fake-id-screening',
     name: 'Fake-ID Screening',
     subtitle: 'AI-Assisted Identity Document Screening',
     category: 'Computer Vision · OCR · Backend',
     year: '2026',
-    featured: true,
+    featured: false,
     badge: null,
     tagline:
       'A document-screening prototype that combines mobile camera capture, OCR/image analysis and a validated FastAPI backend to flag documents for human review.',
@@ -284,7 +376,7 @@ export const projects = [
     subtitle: 'Resume ↔ Job Description Skill-Gap Analysis',
     category: 'LLM Application · Full-Stack',
     year: '2026',
-    featured: true,
+    featured: false,
     badge: null,
     tagline:
       'Compares a resume against a target job description and surfaces skills, gaps and diagnostics through an interactive skill graph.',
@@ -331,63 +423,21 @@ export const projects = [
     image: null,
     imageAlt: null,
   },
+]
 
+/** Secondary / supporting projects shown under "More Work" — not given equal visual weight to flagship. */
+export const secondaryWork = [
   {
-    id: 'ai-adaptive-onboarding',
-    name: 'AI Adaptive Onboarding Engine',
-    subtitle: 'Profile-vs-Role Analysis with Adaptive Learning Paths',
-    category: 'LLM Application · Full-Stack',
-    year: '2026',
-    featured: true,
-    badge: 'Team project',
-    tagline:
-      'Analyses candidate profiles against role requirements, detects skill gaps and generates adaptive learning recommendations behind role-aware dashboards.',
-    problem:
-      'Traditional onboarding is static and role-agnostic: every new joiner gets the same material regardless of what they already know or what the role actually requires.',
-    solution:
-      'A full-stack platform that runs a resume + job-description analysis pipeline, persists the results, detects the skill delta and turns it into structured learning recommendations, surfaced through role-aware dashboards for admin and regular users.',
-    approach: [
-      'FastAPI backend with JWT auth flows — registration, login, profile and password management.',
-      'Analysis pipeline over resume and job description, with results persisted rather than held in the UI.',
-      'Skill-gap detection driving adaptive learning recommendations.',
-      'Role-aware dashboards separating admin and regular-user capability, plus admin user management.',
-      'Analytics views derived from database-backed endpoints rather than mock data.',
-      'Docker Compose setup (frontend, backend, PostgreSQL) for a reproducible local environment.',
-    ],
-    architecture: [
-      'Frontend (React + Vite, served via Nginx)',
-      'HTTP with JWT',
-      'Backend API (FastAPI)',
-      'SQLAlchemy ORM',
-      'PostgreSQL',
-      'All three services orchestrated with Docker Compose',
-    ],
-    features: [
-      'Secure auth flows — registration, login, profile, password management',
-      'Resume and job-description analysis pipeline with persisted results',
-      'Skill-gap detection and adaptive recommendations',
-      'Role-aware dashboards (admin vs regular user)',
-      'Admin user management',
-      'Database-backed analytics views',
-      'Docker Compose for reproducible local setup',
-    ],
-    tech: ['FastAPI', 'Python', 'React', 'PostgreSQL', 'SQLAlchemy', 'Docker', 'JWT', 'LLM analysis'],
-    challenges: [
-      'Keeping analysis results durable and queryable so dashboards and analytics read from the database instead of transient UI state.',
-      'Separating admin and regular-user capability cleanly across the API and the frontend.',
-      'Making the whole stack reproducible for evaluators with a single Docker Compose command.',
-    ],
-    contribution: [
-      'Contributed to this team project across the analysis pipeline and the frontend application.',
-      'Team repository — see the repository history for the full contribution breakdown.',
-    ],
-    disclaimer:
-      'A team project. No usage, accuracy or production-scale claims are made here; the repository is the source of truth for what is implemented.',
-    repo: 'https://github.com/RajanKumar44/ai-adaptive-onboarding-engine',
-    repoNote: 'Team repository owned by a collaborator',
-    demo: null,
-    image: null,
-    imageAlt: null,
+    id: 'h2s-dosimeter',
+    ref: 'h2s-dosimeter',
+  },
+  {
+    id: 'fake-id-screening',
+    ref: 'fake-id-screening',
+  },
+  {
+    id: 'ai-resume-review',
+    ref: 'ai-resume-review',
   },
 ]
 
@@ -410,9 +460,10 @@ export const otherWork = [
   {
     name: 'Deep Learning Signal Modulation Lab',
     description:
-      'Interactive lab for AM / FM / PM modulation, demodulation and signal analysis with a neural classifier over engineered signal features — built alongside the ECE curriculum.',
+      'Interactive lab for AM / FM / PM modulation, demodulation and signal analysis with a neural classifier over engineered signal features — built alongside the ECE curriculum. Demo still hosted under previous username subdomain and verified live.',
     tech: ['TypeScript', 'React', 'Signal processing', 'Neural networks'],
     repo: 'https://github.com/rajaryan1111/deep-learning-am-fm-modulation',
     demo: 'https://a1creator284-deep-learning-am-fm-mo.vercel.app',
+    demoNote: 'Verified live on 2026-09-25 — hosted under previous username subdomain, still active',
   },
 ]

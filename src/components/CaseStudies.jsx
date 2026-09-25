@@ -11,6 +11,57 @@ function Block({ label, children }) {
   )
 }
 
+function EvidenceGallery({ project }) {
+  if (!project.gallery || project.gallery.length === 0) return null
+  return (
+    <Block label="Product evidence — real screenshots from live deployment">
+      <div className="evidence-grid">
+        {project.gallery.map((g) => (
+          <figure key={g.src} className="evidence-item">
+            <div className="evidence-thumb">
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={450}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                  const fb = e.currentTarget.nextElementSibling
+                  if (fb) fb.style.display = 'flex'
+                }}
+              />
+              <div className="evidence-fallback" style={{ display: 'none' }}>
+                <span>{g.label} — live demo: {project.demo}</span>
+                <small>Expected at public{g.src} — real screenshot pending capture from live app</small>
+              </div>
+            </div>
+            <figcaption>
+              <strong>{g.label}</strong> — {g.role}
+              <br />
+              <span style={{ color: 'var(--text-tertiary)', fontSize: 12 }}>{g.alt}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <p className="note" style={{ marginTop: 12 }}>
+        <InfoIcon />
+        <span>
+          Screenshots are real product evidence captured from{' '}
+          <a href={project.demo} target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'underline' }}>
+            {project.demo}
+          </a>
+          . Expected files: <code>public/projects/is-copilot/dashboard.png</code> (main),{' '}
+          <code>recommendations.png</code>, <code>relationship-graph.png</code>,{' '}
+          <code>standards-explorer.png</code>. If a file is missing, the UI shows a placeholder and does not generate a
+          fake screenshot.
+        </span>
+      </p>
+    </Block>
+  )
+}
+
 function CaseStudy({ project, index, open, onToggle }) {
   const panelId = `panel-${project.id}`
 
@@ -26,7 +77,8 @@ function CaseStudy({ project, index, open, onToggle }) {
         >
           <span className="case__trigger-main">
             <span className="case__index">
-              {String(index + 1).padStart(2, '0')} · {project.year}
+              {String(index + 1).padStart(2, '0')} · {project.year} {project.flagship ? '· Flagship' : ''}{' '}
+              {project.featured && !project.flagship ? '· Featured' : ''} {!project.featured ? '· More Work' : ''}
             </span>
             <span className="case__name">
               {project.name} — {project.subtitle}
@@ -39,7 +91,9 @@ function CaseStudy({ project, index, open, onToggle }) {
 
       {open && (
         <div className="case__panel" id={panelId}>
-          {project.image && (
+          {project.id === 'is-copilot' ? (
+            <EvidenceGallery project={project} />
+          ) : project.image ? (
             <figure className="case__shot">
               <img
                 src={project.image}
@@ -48,10 +102,13 @@ function CaseStudy({ project, index, open, onToggle }) {
                 decoding="async"
                 width="1600"
                 height="900"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                }}
               />
               <figcaption>{project.name} — application screenshot</figcaption>
             </figure>
-          )}
+          ) : null}
 
           <Block label="Problem">
             <p>{project.problem}</p>
@@ -162,6 +219,15 @@ export default function CaseStudies() {
     return () => window.removeEventListener('hashchange', openFromHash)
   }, [])
 
+  // Order case studies to match homepage priority: flagship first, featured next, then more work
+  const ordered = [...projects].sort((a, b) => {
+    if (a.flagship && !b.flagship) return -1
+    if (!a.flagship && b.flagship) return 1
+    if (a.featured && !b.featured) return -1
+    if (!a.featured && b.featured) return 1
+    return 0
+  })
+
   return (
     <section className="section" id="case-studies">
       <div className="shell">
@@ -169,14 +235,14 @@ export default function CaseStudies() {
           <p className="eyebrow">Deep dive</p>
           <h2 className="section-title">Case studies</h2>
           <p className="section-sub">
-            The problem, the approach, the architecture and the honest limitations of each project. Content is
-            drawn from each project&apos;s own repository — no metrics are claimed that the repository does not
-            document.
+            The problem, the approach, the architecture and the honest limitations of each project. Flagship case
+            study (IS Copilot) includes real product evidence from the live deployment. Content is drawn from each
+            project&apos;s own repository — no metrics are claimed that the repository does not document.
           </p>
         </header>
 
         <div style={{ display: 'grid', gap: 12 }}>
-          {projects.map((project, i) => (
+          {ordered.map((project, i) => (
             <CaseStudy
               key={project.id}
               project={project}

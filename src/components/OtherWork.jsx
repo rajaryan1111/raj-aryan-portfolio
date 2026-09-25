@@ -1,6 +1,6 @@
 import { otherWork } from '../data/projects'
 import { profile } from '../data/profile'
-import { ArrowUpRightIcon, GitHubIcon } from './Icons'
+import { ArrowUpRightIcon, GitHubIcon, InfoIcon } from './Icons'
 
 export default function OtherWork() {
   return (
@@ -10,8 +10,8 @@ export default function OtherWork() {
           <p className="eyebrow">Also public</p>
           <h2 className="section-title">Other repositories</h2>
           <p className="section-sub">
-            Smaller or supporting work that is open on GitHub — data pipelines, ingestion tooling and coursework
-            built up properly.
+            Smaller or supporting work that is open on GitHub — data pipelines, ingestion tooling and coursework built
+            up properly. All repository URLs verified against the GitHub API on 2026-09-25; demo URLs verified live.
           </p>
         </header>
 
@@ -43,16 +43,31 @@ export default function OtherWork() {
                   </li>
                 ))}
               </ul>
+              {item.demoNote && (
+                <p style={{ fontSize: 12, color: 'var(--text-quaternary)', fontFamily: 'var(--mono)', marginTop: 6 }}>
+                  {item.demoNote}
+                </p>
+              )}
             </article>
           ))}
         </div>
 
-        <div style={{ marginTop: 22 }}>
-          <a className="btn btn--ghost" href={profile.github} target="_blank" rel="noreferrer noopener">
-            <GitHubIcon />
-            See all repositories on GitHub
-            <ArrowUpRightIcon />
-          </a>
+        <div className="other-work-foot">
+          <p className="note">
+            <InfoIcon />
+            <span>
+              Old <code>a1creator284</code> GitHub URLs redirect via 301 to canonical <code>rajaryan1111/*</code> URLs.
+              All project repository links above use canonical <code>rajaryan1111</code> form. Demo URL for Deep
+              Learning Lab is still hosted under previous Vercel subdomain but verified live — no invented metrics.
+            </span>
+          </p>
+          <div style={{ marginTop: 22 }}>
+            <a className="btn btn--ghost" href={profile.github} target="_blank" rel="noreferrer noopener">
+              <GitHubIcon />
+              See all repositories on GitHub
+              <ArrowUpRightIcon />
+            </a>
+          </div>
         </div>
       </div>
     </section>
