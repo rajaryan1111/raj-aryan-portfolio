@@ -23,6 +23,7 @@ function Media({ project, wide }) {
         <img
           src={project.image}
           alt={project.imageAlt}
+          style={{ objectPosition: project.imagePosition || '50% 50%' }}
           loading="lazy"
           decoding="async"
           width={wide ? 1600 : 1200}
@@ -100,6 +101,7 @@ function MainCard({ project }) {
                   <img
                     src={g.src}
                     alt={g.alt}
+                    style={{ objectPosition: g.objectPosition || '50% 50%' }}
                     loading="lazy"
                     decoding="async"
                     width={480}
