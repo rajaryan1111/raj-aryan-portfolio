@@ -55,7 +55,7 @@ export const principles = [
 ]
 
 export const aboutParagraphs = [
-  'I’m a B.Tech ECE student in Bengaluru building AI systems that actually work. I’ve been working across RAG, LLM apps, agents, computer vision, and full-stack — mostly because the interesting part isn’t just the model, it’s everything around it.',
+  'I’m a B.Tech Electronics student in Bengaluru building AI systems that actually work. I’ve been working across RAG, LLM apps, agents, computer vision, and full-stack — mostly because the interesting part isn’t just the model, it’s everything around it.',
   'Most of my projects start from messy input — a tender clause in three languages, a photo of a color strip in bad light, a resume vs a job description. I like turning that into something structured you can check and use.',
   'I’m currently looking for AI/ML internship opportunities where I can work on real systems, not just notebooks.',
 ]
