@@ -61,7 +61,7 @@ export const aboutParagraphs = [
 ]
 
 export const aboutFacts = [
-  { label: 'Education', value: 'B.Tech — ECE' },
+  { label: 'Education', value: 'B.Tech — Electronics' },
   { label: 'Based in', value: 'Bengaluru, India' },
   { label: 'Focus', value: 'RAG · Agents · Computer Vision · Full-stack' },
   { label: 'Looking for', value: 'AI/ML internships' },
