@@ -33,6 +33,17 @@ function Media({ project, wide }) {
           <div style={{ position: 'relative', display: 'grid', justifyItems: 'center' }}>
             <GlyphMark variant={glyphFor[project.id]} />
             <span className="glyph__label">{project.category}</span>
+            {project.demo && (
+              <a
+                className="glyph__action"
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Open live demo
+                <ArrowUpRightIcon width="13" height="13" />
+              </a>
+            )}
           </div>
         </div>
       </div>
