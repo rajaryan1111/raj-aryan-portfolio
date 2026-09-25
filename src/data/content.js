@@ -55,14 +55,12 @@ export const principles = [
 ]
 
 export const aboutParagraphs = [
-  'I’m a B.Tech Electronics student in Bengaluru building AI systems that actually work. I’ve been working across RAG, LLM apps, agents, computer vision, and full-stack — mostly because the interesting part isn’t just the model, it’s everything around it.',
-  'Most of my projects start from messy input — a tender clause in three languages, a photo of a color strip in bad light, a resume vs a job description. I like turning that into something structured you can check and use.',
-  'I’m currently looking for AI/ML internship opportunities where I can work on real systems, not just notebooks.',
+  'I’m a B.Tech Electronics student in Bengaluru building AI systems across RAG, LLM apps, agents, computer vision, and full-stack development. I enjoy the engineering around the model — retrieval, APIs, evaluation, and interfaces.',
+  'Most of my projects start with messy input: a tender clause in three languages, a photo of a color strip in uneven light, or a resume against a job description. I like turning that into something structured, explainable, and usable.',
 ]
 
 export const aboutFacts = [
   { label: 'Education', value: 'B.Tech — Electronics' },
   { label: 'Based in', value: 'Bengaluru, India' },
   { label: 'Focus', value: 'RAG · Agents · Computer Vision · Full-stack' },
-  { label: 'Looking for', value: 'AI/ML internships' },
 ]
