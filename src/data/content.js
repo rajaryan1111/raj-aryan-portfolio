@@ -60,7 +60,9 @@ export const aboutParagraphs = [
 ]
 
 export const aboutFacts = [
-  { label: 'Education', value: 'B.Tech — Electronics' },
+  { label: 'Education', value: 'B.E. — Electronics & Telecommunication' },
   { label: 'Based in', value: 'Bengaluru, India' },
+  { label: 'Experience', value: 'Vertex Technical Club · Technical Team' },
+  { label: 'Achievement', value: '3rd of 40+ teams · Maker Blitz 2025' },
   { label: 'Focus', value: 'RAG · Agents · Computer Vision · Full-stack' },
 ]
