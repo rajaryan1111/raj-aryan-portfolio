@@ -20,8 +20,8 @@ export default function Hero() {
         </p>
 
         <h1 className="hero__title">
-          <span>Building AI systems</span>
-          <span className="dim">that actually ship.</span>
+          <span>Building AI systems end to end.</span>
+          <span className="dim">From model to interface.</span>
         </h1>
 
         <p className="hero__copy">
