@@ -55,7 +55,7 @@ export const principles = [
 ]
 
 export const aboutParagraphs = [
-  'I’m a B.Tech Electronics student in Bengaluru building AI systems across RAG, LLM apps, agents, computer vision, and full-stack development. I enjoy the engineering around the model — retrieval, APIs, evaluation, and interfaces.',
+  'I’m a B.E. Electronics student in Bengaluru building AI systems across RAG, LLM apps, agents, computer vision, and full-stack development. I enjoy the engineering around the model — retrieval, APIs, evaluation, and interfaces.',
   'Most of my projects start with messy input: a tender clause in three languages, a photo of a color strip in uneven light, or a resume against a job description. I like turning that into something structured, explainable, and usable.',
 ]
 
