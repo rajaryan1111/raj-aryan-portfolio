@@ -101,6 +101,16 @@ function CaseStudy({ project, index, open, onToggle }) {
             </ul>
           </Block>
 
+          {project.evaluation && project.evaluation.length > 0 && (
+            <Block label="Evaluation">
+              <ul className="list">
+                {project.evaluation.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </Block>
+          )}
+
           {project.engineeringNotes && project.engineeringNotes.length > 0 && (
             <Block label="What I had to figure out">
               <ul className="list">
