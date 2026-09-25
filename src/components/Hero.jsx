@@ -28,6 +28,10 @@ export default function Hero() {
             View Projects
             <ArrowRightIcon />
           </a>
+          <a className="btn btn--ghost" href={profile.resume} target="_blank" rel="noreferrer noopener">
+            Resume
+            <ArrowRightIcon />
+          </a>
           <a className="btn btn--ghost" href={profile.github} target="_blank" rel="noreferrer noopener">
             <GitHubIcon />
             GitHub
