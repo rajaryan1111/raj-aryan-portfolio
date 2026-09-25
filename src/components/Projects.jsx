@@ -97,6 +97,12 @@ function MainCard({ project }) {
           searches by meaning, and shows why each standard was picked.
         </p>
 
+        <div className="pcard__proof" aria-label="Project proof">
+          <span><b>876</b> indexed demo standards</span>
+          <span><b>53</b> tests documented in the repo</span>
+          <span><b>Live</b> deployed demo</span>
+        </div>
+
         <ul className="stack" aria-label={`${project.name} technologies`}>
           {project.tech.slice(0, 6).map((t) => (
             <li className="chip" key={t}>
