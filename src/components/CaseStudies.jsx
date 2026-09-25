@@ -14,7 +14,7 @@ function Block({ label, children }) {
 function EvidenceGallery({ project }) {
   if (!project.gallery || project.gallery.length === 0) return null
   return (
-    <Block label="Product evidence — real screenshots from live deployment">
+    <Block label="Product evidence">
       <div className="evidence-grid">
         {project.gallery.map((g) => (
           <figure key={g.src} className="evidence-item">
@@ -34,7 +34,7 @@ function EvidenceGallery({ project }) {
               />
               <div className="evidence-fallback" style={{ display: 'none' }}>
                 <span>{g.label} — live demo: {project.demo}</span>
-                <small>Expected at public{g.src} — real screenshot pending capture from live app</small>
+                <small>Open the live demo to inspect this view.</small>
               </div>
             </div>
             <figcaption>
@@ -236,7 +236,7 @@ export default function CaseStudies() {
           <h2 className="section-title">Case studies</h2>
           <p className="section-sub">
             The problem, the approach, the architecture and the honest limitations of each project. Flagship case
-            study (IS Copilot) includes real product evidence from the live deployment. Content is drawn from each
+            study (IS Copilot) links directly to the live deployment. Content is drawn from each
             project&apos;s own repository — no metrics are claimed that the repository does not document.
           </p>
         </header>
