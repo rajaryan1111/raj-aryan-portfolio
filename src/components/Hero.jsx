@@ -6,11 +6,6 @@ export default function Hero() {
     <section className="hero" id="top">
       <div className="hero__grid-bg" aria-hidden="true" />
       <div className="shell hero__inner">
-        <p className="status">
-          <span className="status__dot" aria-hidden="true" />
-          {profile.status}
-        </p>
-
         <p className="hero__id">
           <strong>{profile.name}</strong>
           <span aria-hidden="true">/</span>
