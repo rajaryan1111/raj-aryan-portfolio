@@ -30,9 +30,10 @@ export default function Contact() {
                 Email
               </a>
             ) : (
-              <a className="btn btn--ghost" href={`${profile.linkedin}`} target="_blank" rel="noreferrer noopener">
-                <MailIcon />
+              <a className="btn btn--ghost" href={profile.linkedin} target="_blank" rel="noreferrer noopener">
+                <LinkedInIcon />
                 Message on LinkedIn
+                <ArrowUpRightIcon />
               </a>
             )}
           </div>
