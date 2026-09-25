@@ -1,80 +1,68 @@
 export const skillGroups = [
   {
     title: 'AI / Machine Learning',
-    note: 'Applied across IS Copilot, Jarvis, the H₂S dosimeter and the resume-analysis projects.',
+    note: 'What I actually used in these projects — not a wishlist.',
     skills: [
       'Python',
-      'Machine Learning',
-      'LLM Applications',
       'RAG',
+      'LLM Apps',
       'AI Agents',
       'Embeddings',
       'Vector Search',
-      'Semantic Retrieval',
       'Computer Vision',
       'OpenCV',
       'OCR',
-      'Prompt Engineering',
     ],
   },
   {
     title: 'Backend & Data',
-    note: 'Used to build the APIs, persistence and pipelines behind these projects.',
-    skills: [
-      'FastAPI',
-      'REST APIs',
-      'PostgreSQL',
-      'Supabase',
-      'SQLAlchemy',
-      'pgvector',
-      'Async pipelines',
-      'Docker',
-    ],
+    note: 'APIs and persistence behind the demos.',
+    skills: ['FastAPI', 'REST APIs', 'PostgreSQL', 'Supabase', 'SQLAlchemy', 'Docker'],
   },
   {
     title: 'Frontend',
-    note: 'Every project ships with an interface — the analysis is only useful if it can be read.',
-    skills: ['React', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind CSS', 'React Flow', 'Recharts', 'Modern CSS'],
+    note: 'If the output isn’t readable, it’s not usable.',
+    skills: ['React', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind CSS', 'React Flow', 'Recharts'],
   },
   {
     title: 'Engineering',
-    note: 'How the work is kept reproducible and verifiable.',
-    skills: ['Git', 'GitHub Actions', 'CI', 'Vitest / Pytest', 'Docker Compose', 'Vercel', 'API integration'],
+    note: 'Keeping things runnable for others.',
+    skills: ['Git', 'GitHub Actions', 'Docker Compose', 'Vercel', 'Vitest / Pytest'],
   },
 ]
 
 export const principles = [
   {
     number: '01',
-    title: 'Ground outputs in evidence',
-    body: 'A recommendation without a source is a guess with better formatting. In IS Copilot every recommendation carries per-requirement evidence snippets, indexed source metadata and a confidence breakdown, so a reviewer can check the reasoning instead of trusting the score.',
+    title: 'Show your work',
+    body: 'In IS Copilot every recommendation comes with the snippet and source it came from, plus how confident I am and why. A score without evidence isn’t useful when you’re drafting a tender.',
   },
   {
     number: '02',
-    title: 'Make failure visible',
-    body: 'Systems degrade — vector search goes down, a provider times out, a document is unreadable. I prefer explicit fallbacks and visible limitations over silent failure: lexical fallback when retrieval fails, demoted "related" results below a confidence threshold, and written scope notes where evaluation used synthetic data.',
+    title: 'Make failure obvious',
+    body: 'Vector search can be down, a PDF can be scanned, an LLM can time out. I’d rather show a fallback or say “this is from synthetic data” than fail silently.',
   },
   {
     number: '03',
     title: 'Build the interface too',
-    body: 'A model output nobody can read is not a product. I build the frontend alongside the pipeline — explorers, graphs, gap views and dashboards — because the interface is where an AI system either becomes reviewable or stays a black box.',
+    body: 'A model output in a log file isn’t a product. I build the frontend alongside — explorer, graph, gaps — so someone can actually review what the system did.',
   },
   {
     number: '04',
-    title: 'Keep systems reproducible',
-    body: 'Environment-based configuration, Docker Compose setups, deterministic test fixtures, offline demo modes and CI on the repositories. Someone else should be able to clone the project and run it without a private setup ritual.',
+    title: 'Keep it runnable',
+    body: 'Env-based config, Docker Compose, offline demo mode, CI. If someone clones it, they should be able to run it without asking me for a secret setup.',
   },
 ]
 
 export const aboutParagraphs = [
-  "I'm a B.Tech ECE student focused on building practical AI systems. My work spans retrieval-augmented generation, LLM applications, computer vision, AI agents and full-stack AI products.",
-  'I enjoy working on the engineering around the model — data pipelines, retrieval, APIs, evaluation, interfaces and deployment — because a useful AI system needs more than a good model.',
-  'Most of what I build starts from a messy real input: a pasted tender clause in three languages, a photo of a colour strip under bad lighting, a resume against a job description. The interesting part is turning that into something structured, explainable and checkable.',
+  'I’m a B.Tech ECE student in Bengaluru building AI systems that actually work. I’ve been working across RAG, LLM apps, agents, computer vision, and full-stack — mostly because the interesting part isn’t just the model, it’s everything around it.',
+  'Most of my projects start from messy input — a tender clause in three languages, a photo of a color strip in bad light, a resume vs a job description. I like turning that into something structured you can check and use.',
+  'I’m currently looking for AI/ML internship opportunities where I can work on real systems, not just notebooks.',
 ]
 
 export const aboutFacts = [
-  { label: 'Education', value: 'B.Tech — Electronics & Communication Engineering' },
+  { label: 'Education', value: 'B.Tech — ECE' },
   { label: 'Based in', value: 'Bengaluru, India' },
-  { label: 'Focus', value: 'RAG · LLM applications · AI agents · Computer vision' },
-  { label: 'Looking for', value: 'AI/ML engineering internships' },
+  { label: 'Focus', value: 'RAG · Agents · Computer Vision · Full-stack' },
+  { label: 'Looking for', value: 'AI/ML internships' },
 ]

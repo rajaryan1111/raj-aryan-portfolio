@@ -11,10 +11,10 @@ function Block({ label, children }) {
   )
 }
 
-function EvidenceGallery({ project }) {
+function Gallery({ project }) {
   if (!project.gallery || project.gallery.length === 0) return null
   return (
-    <Block label="Product evidence — real screenshots from live deployment">
+    <Block label="Screenshots — from the live app">
       <div className="evidence-grid">
         {project.gallery.map((g) => (
           <figure key={g.src} className="evidence-item">
@@ -33,31 +33,21 @@ function EvidenceGallery({ project }) {
                 }}
               />
               <div className="evidence-fallback" style={{ display: 'none' }}>
-                <span>{g.label} — live demo: {project.demo}</span>
-                <small>Expected at public{g.src} — real screenshot pending capture from live app</small>
+                <span>{g.label}</span>
+                <small>
+                  See it live at{' '}
+                  <a href={project.demo} target="_blank" rel="noreferrer noopener">
+                    {project.demo}
+                  </a>
+                </small>
               </div>
             </div>
             <figcaption>
-              <strong>{g.label}</strong> — {g.role}
-              <br />
-              <span style={{ color: 'var(--text-tertiary)', fontSize: 12 }}>{g.alt}</span>
+              <strong>{g.label}</strong>
             </figcaption>
           </figure>
         ))}
       </div>
-      <p className="note" style={{ marginTop: 12 }}>
-        <InfoIcon />
-        <span>
-          Screenshots are real product evidence captured from{' '}
-          <a href={project.demo} target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'underline' }}>
-            {project.demo}
-          </a>
-          . Expected files: <code>public/projects/is-copilot/dashboard.png</code> (main),{' '}
-          <code>recommendations.png</code>, <code>relationship-graph.png</code>,{' '}
-          <code>standards-explorer.png</code>. If a file is missing, the UI shows a placeholder and does not generate a
-          fake screenshot.
-        </span>
-      </p>
     </Block>
   )
 }
@@ -77,13 +67,12 @@ function CaseStudy({ project, index, open, onToggle }) {
         >
           <span className="case__trigger-main">
             <span className="case__index">
-              {String(index + 1).padStart(2, '0')} · {project.year} {project.flagship ? '· Flagship' : ''}{' '}
-              {project.featured && !project.flagship ? '· Featured' : ''} {!project.featured ? '· More Work' : ''}
+              {String(index + 1).padStart(2, '0')} · {project.year}
             </span>
             <span className="case__name">
               {project.name} — {project.subtitle}
             </span>
-            <span className="case__hint">{open ? 'Hide full case study' : 'Read the full case study'}</span>
+            <span className="case__hint">{open ? 'Hide details' : 'Read details'}</span>
           </span>
           <ChevronDownIcon className="case__chev" />
         </button>
@@ -91,48 +80,38 @@ function CaseStudy({ project, index, open, onToggle }) {
 
       {open && (
         <div className="case__panel" id={panelId}>
-          {project.id === 'is-copilot' ? (
-            <EvidenceGallery project={project} />
-          ) : project.image ? (
-            <figure className="case__shot">
-              <img
-                src={project.image}
-                alt={project.imageAlt}
-                loading="lazy"
-                decoding="async"
-                width="1600"
-                height="900"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none'
-                }}
-              />
-              <figcaption>{project.name} — application screenshot</figcaption>
-            </figure>
-          ) : null}
+          {project.id === 'is-copilot' && <Gallery project={project} />}
 
-          <Block label="Problem">
+          <Block label="Why I built it">
             <p>{project.problem}</p>
+            <p style={{ marginTop: 8 }}>{project.solution}</p>
           </Block>
 
-          <Block label="Approach">
-            <p>{project.solution}</p>
-            <ul className="list">
+          <Block label="How it works">
+            <ol className="flow">
+              {project.architecture.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+            <ul className="list" style={{ marginTop: 16 }}>
               {project.approach.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
           </Block>
 
-          <Block label="Architecture">
-            <ol className="flow">
-              {project.architecture.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ol>
-          </Block>
+          {project.engineeringNotes && project.engineeringNotes.length > 0 && (
+            <Block label="What I had to figure out">
+              <ul className="list">
+                {project.engineeringNotes.map((n) => (
+                  <li key={n}>{n}</li>
+                ))}
+              </ul>
+            </Block>
+          )}
 
           <div className="grid-2">
-            <Block label="Key features">
+            <Block label="What it does">
               <ul className="list">
                 {project.features.map((f) => (
                   <li key={f}>{f}</li>
@@ -141,7 +120,7 @@ function CaseStudy({ project, index, open, onToggle }) {
             </Block>
 
             <div style={{ display: 'grid', gap: 30, alignContent: 'start' }}>
-              <Block label="Technology">
+              <Block label="Stack">
                 <ul className="stack">
                   {project.tech.map((t) => (
                     <li className="chip" key={t}>
@@ -151,7 +130,7 @@ function CaseStudy({ project, index, open, onToggle }) {
                 </ul>
               </Block>
 
-              <Block label="Challenges">
+              <Block label="What was tricky">
                 <ul className="list">
                   {project.challenges.map((c) => (
                     <li key={c}>{c}</li>
@@ -161,7 +140,7 @@ function CaseStudy({ project, index, open, onToggle }) {
             </div>
           </div>
 
-          <Block label="What I built">
+          <Block label={project.repoNote?.includes('Team') ? 'My contribution — team project' : 'My contribution'}>
             <ul className="list">
               {project.contribution.map((c) => (
                 <li key={c}>{c}</li>
@@ -205,7 +184,6 @@ function CaseStudy({ project, index, open, onToggle }) {
 export default function CaseStudies() {
   const [openId, setOpenId] = useState(null)
 
-  // Allow deep-linking to a case study (#case-is-copilot) from the project cards.
   useEffect(() => {
     const openFromHash = () => {
       const hash = window.location.hash
@@ -219,7 +197,6 @@ export default function CaseStudies() {
     return () => window.removeEventListener('hashchange', openFromHash)
   }, [])
 
-  // Order case studies to match homepage priority: flagship first, featured next, then more work
   const ordered = [...projects].sort((a, b) => {
     if (a.flagship && !b.flagship) return -1
     if (!a.flagship && b.flagship) return 1
@@ -232,12 +209,11 @@ export default function CaseStudies() {
     <section className="section" id="case-studies">
       <div className="shell">
         <header className="section-head">
-          <p className="eyebrow">Deep dive</p>
-          <h2 className="section-title">Case studies</h2>
+          <p className="eyebrow">Details</p>
+          <h2 className="section-title">How I built them</h2>
           <p className="section-sub">
-            The problem, the approach, the architecture and the honest limitations of each project. Flagship case
-            study (IS Copilot) includes real product evidence from the live deployment. Content is drawn from each
-            project&apos;s own repository — no metrics are claimed that the repository does not document.
+            Short version on the cards, longer version here if you want it. All from the actual repos — no invented
+            numbers.
           </p>
         </header>
 

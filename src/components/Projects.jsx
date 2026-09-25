@@ -32,7 +32,7 @@ function Media({ project, wide }) {
         <div className="glyph" style={{ display: 'none' }}>
           <div style={{ position: 'relative', display: 'grid', justifyItems: 'center' }}>
             <GlyphMark variant={glyphFor[project.id]} />
-            <span className="glyph__label">{project.category} · Live demo → {project.demo ? new URL(project.demo).hostname : 'GitHub'}</span>
+            <span className="glyph__label">{project.category}</span>
           </div>
         </div>
       </div>
@@ -50,14 +50,14 @@ function Media({ project, wide }) {
   )
 }
 
-function FlagshipCard({ project }) {
+function MainCard({ project }) {
   return (
     <article className="pcard pcard--flagship">
       <Media project={project} wide />
       <div className="pcard__body">
         <div className="pcard__top">
-          <span className="tag tag--signal">Flagship · {project.badge}</span>
           <span className="tag">{project.category}</span>
+          {project.badge && <span className="tag tag--signal">{project.badge}</span>}
           <span className="tag">{project.year}</span>
         </div>
 
@@ -68,13 +68,13 @@ function FlagshipCard({ project }) {
 
         <p className="pcard__text">{project.tagline}</p>
 
-        <p className="pcard__text" style={{ fontSize: 14, color: 'var(--text-tertiary)', marginTop: -4 }}>
-          Evidence-first RAG system with typed relationship graph, six-component confidence and gap analysis.
-          Every recommendation labelled as AI assistance for human verification.
+        <p className="pcard__text" style={{ fontSize: 14, color: 'var(--text-tertiary)' }}>
+          I built this to make Indian Standards discovery less dependent on exact wording. It reads a requirement,
+          searches by meaning, and shows why each standard was picked.
         </p>
 
         <ul className="stack" aria-label={`${project.name} technologies`}>
-          {project.tech.slice(0, 8).map((t) => (
+          {project.tech.slice(0, 6).map((t) => (
             <li className="chip" key={t}>
               {t}
             </li>
@@ -82,7 +82,7 @@ function FlagshipCard({ project }) {
         </ul>
 
         {project.gallery && project.gallery.length > 1 && (
-          <div className="pcard__gallery" aria-label={`${project.name} product evidence gallery`}>
+          <div className="pcard__gallery" aria-label={`${project.name} screenshots`}>
             {project.gallery.slice(1).map((g) => (
               <figure key={g.src} className="pcard__gallery-item">
                 <div className="pcard__gallery-thumb">
@@ -95,8 +95,8 @@ function FlagshipCard({ project }) {
                     height={270}
                     onError={(e) => {
                       e.currentTarget.style.display = 'none'
-                      const fallback = e.currentTarget.nextElementSibling
-                      if (fallback) fallback.style.display = 'flex'
+                      const fb = e.currentTarget.nextElementSibling
+                      if (fb) fb.style.display = 'flex'
                     }}
                   />
                   <div className="pcard__gallery-fallback" style={{ display: 'none' }}>
@@ -106,7 +106,6 @@ function FlagshipCard({ project }) {
                 </div>
                 <figcaption>
                   <strong>{g.label}</strong>
-                  <span>{g.role}</span>
                 </figcaption>
               </figure>
             ))}
@@ -116,27 +115,19 @@ function FlagshipCard({ project }) {
         <div className="pcard__foot">
           {project.demo && (
             <a className="linkbtn linkbtn--solid" href={project.demo} target="_blank" rel="noreferrer noopener">
-              Live demo — {new URL(project.demo).hostname}
+              Live demo
               <ArrowUpRightIcon />
-              <span className="sr-only">— {project.name} (opens in a new tab)</span>
             </a>
           )}
           <a className="linkbtn" href={project.repo} target="_blank" rel="noreferrer noopener">
             <GitHubIcon width="14" height="14" />
             Repository
             <ArrowUpRightIcon />
-            <span className="sr-only">— {project.name} (opens in a new tab)</span>
           </a>
           <a className="linkbtn" href={`#case-${project.id}`}>
-            Case study
+            Details
           </a>
         </div>
-
-        <p className="pcard__note">
-          Real screenshots expected at <code>public/projects/is-copilot/</code>: dashboard.png (main), recommendations.png,
-          relationship-graph.png, standards-explorer.png — captured from the live Vercel deployment. UI falls back to
-          abstract placeholder if files are missing; no fake screenshot is generated.
-        </p>
       </div>
     </article>
   )
@@ -177,10 +168,10 @@ function SecondaryCard({ project }) {
           )}
           <a className="linkbtn" href={project.repo} target="_blank" rel="noreferrer noopener">
             <GitHubIcon width="14" height="14" />
-            Repository
+            Code
           </a>
           <a className="linkbtn" href={`#case-${project.id}`}>
-            Case study
+            Details
           </a>
         </div>
       </div>
@@ -195,7 +186,6 @@ function CompactCard({ project }) {
         <div className="pcard__top">
           <span className="tag">{project.category}</span>
           <span className="tag">{project.year}</span>
-          {project.badge && <span className="tag tag--signal">{project.badge}</span>}
         </div>
         <h3 className="pcard__title" style={{ fontSize: 18 }}>
           {project.name}
@@ -217,7 +207,7 @@ function CompactCard({ project }) {
             Code
           </a>
           <a className="linkbtn" href={`#case-${project.id}`}>
-            Case study
+            Details
           </a>
         </div>
       </div>
@@ -226,7 +216,7 @@ function CompactCard({ project }) {
 }
 
 export default function Projects() {
-  const flagship = projects.find((p) => p.flagship) || projects[0]
+  const main = projects.find((p) => p.flagship) || projects[0]
   const secondary = projects.filter((p) => p.featured && !p.flagship).slice(0, 2)
   const moreWork = projects.filter((p) => !p.featured && !p.flagship)
 
@@ -234,16 +224,16 @@ export default function Projects() {
     <section className="section" id="work">
       <div className="shell">
         <header className="section-head">
-          <p className="eyebrow">Selected work</p>
+          <p className="eyebrow">Work</p>
           <h2 className="section-title">Projects</h2>
           <p className="section-sub">
-            Flagship first. IS Copilot is the primary case study with real product evidence from its live deployment.
-            Two additional strong systems follow, then secondary work in a compact, scannable format.
+            IS Copilot is the project I spent the most time on — it’s live and you can try it. The other two are
+            solid builds, and the rest are smaller things I learned from.
           </p>
         </header>
 
         <div className="projects projects--flagship">
-          <FlagshipCard project={flagship} />
+          <MainCard project={main} />
         </div>
 
         <div className="projects projects--secondary" style={{ marginTop: 18 }}>
@@ -254,10 +244,9 @@ export default function Projects() {
 
         <div className="more-work">
           <div className="more-work__head">
-            <h3 className="more-work__title">More Work</h3>
+            <h3 className="more-work__title">More work</h3>
             <p className="more-work__sub">
-              Additional verified builds — computer vision, screening prototypes and resume analysis. Full case studies
-              below, repositories public.
+              Smaller builds — vision, screening, resume analysis. Repos are public, case studies below.
             </p>
           </div>
           <div className="projects projects--more">

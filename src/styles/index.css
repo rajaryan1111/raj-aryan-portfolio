@@ -1338,9 +1338,8 @@ p {
 
 .pcard--flagship {
   grid-template-columns: minmax(0, 1fr);
-  border-color: #252c33;
-  background: linear-gradient(180deg, #0f1418 0%, var(--bg-card) 100%);
-  box-shadow: 0 0 0 1px rgba(91, 156, 248, 0.06), 0 12px 40px rgba(0, 0, 0, 0.45);
+  border-color: var(--border-strong);
+  background: var(--bg-card);
 }
 
 .pcard--flagship .pcard__media {

@@ -5,12 +5,9 @@ export default function Approach() {
     <section className="section" id="approach">
       <div className="shell">
         <header className="section-head">
-          <p className="eyebrow">Engineering approach</p>
-          <h2 className="section-title">How I build</h2>
-          <p className="section-sub">
-            Four things I try to hold to in every project. They are habits I&apos;m building, not a methodology
-            I&apos;m selling.
-          </p>
+          <p className="eyebrow">How I work</p>
+          <h2 className="section-title">A few things I try to do</h2>
+          <p className="section-sub">Not a methodology — just habits I’m building.</p>
         </header>
 
         <div className="principles">

@@ -5,11 +5,10 @@ export default function Skills() {
     <section className="section" id="skills">
       <div className="shell">
         <header className="section-head">
-          <p className="eyebrow">Technical skills</p>
-          <h2 className="section-title">What I work with</h2>
+          <p className="eyebrow">Stack</p>
+          <h2 className="section-title">What I actually use</h2>
           <p className="section-sub">
-            Grouped by where it actually gets used. Everything listed here appears in the projects and public
-            repositories above — nothing is included just to fill the list.
+            Everything here shows up in the projects above. Nothing added just to fill space.
           </p>
         </header>
 

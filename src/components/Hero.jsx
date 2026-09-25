@@ -25,9 +25,10 @@ export default function Hero() {
         </h1>
 
         <p className="hero__copy">
-          I build practical AI applications across <b>RAG</b>, <b>LLM applications</b>, <b>AI agents</b>,{' '}
-          <b>computer vision</b> and <b>backend systems</b> — turning messy real-world inputs into useful,
-          explainable products.
+          I’m a student engineer in Bengaluru. I build <b>RAG apps that can explain their answers</b>,{' '}
+          <b>agents that can see and act</b>, <b>vision pipelines that work in bad lighting</b>, and the{' '}
+          <b>backend + frontend</b> to make them usable. I like working on the parts around the model — retrieval,
+          APIs, evaluation, and interfaces.
         </p>
 
         <div className="hero__cta">
@@ -47,7 +48,7 @@ export default function Hero() {
 
         <div className="hero__meta">
           <span>
-            <b>Focus</b> RAG · LLMs · Agents · CV
+            <b>Focus</b> RAG · Agents · Vision · Full-stack
           </span>
           <span>
             <b>Stack</b> Python · FastAPI · React · TypeScript

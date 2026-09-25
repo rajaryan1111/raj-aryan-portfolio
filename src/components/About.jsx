@@ -6,7 +6,7 @@ export default function About() {
       <div className="shell">
         <header className="section-head">
           <p className="eyebrow">About</p>
-          <h2 className="section-title">Engineering around the model</h2>
+          <h2 className="section-title">I like building the parts around the model</h2>
         </header>
 
         <div className="about">
