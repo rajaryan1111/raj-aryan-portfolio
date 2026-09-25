@@ -10,8 +10,8 @@ export const profile = {
   education: 'B.E. — Electronics & Telecommunication Engineering',
   github: 'https://github.com/rajaryan1111',
   linkedin: 'https://www.linkedin.com/in/raj-aryan-20aa32394/',
-  email: '',
-  emailVerified: false,
+  email: 'rajaryan11112003@gmail.com',
+  emailVerified: true,
 }
 
 export const navLinks = [
