@@ -78,11 +78,10 @@ export const projects = [
     imageAlt: 'IS Copilot dashboard — live application screenshot',
     imagePosition: '50% 0%',
     gallery: [
-      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot dashboard', label: 'Dashboard', objectPosition: '50% 0%' },
-      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot analysis and recommendation results', label: 'Recommendation results', objectPosition: '50% 33.333%' },
-      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot standards relationship graph', label: 'Relationship graph', objectPosition: '50% 66.667%' },
-      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot standards explorer', label: 'Standards explorer', objectPosition: '50% 100%' },
-    ],  },
+      { src: '/projects/is-copilot/dashboard.webp', alt: 'IS Copilot application dashboard', label: 'Application dashboard', objectPosition: '50% 0%' },
+      { src: '/projects/is-copilot/evidence.webp', alt: 'IS Copilot evidence and analysis view', label: 'Evidence and analysis', objectPosition: '50% 0%' },
+    ],
+  },
 
   {
     id: 'ai-adaptive-onboarding',
@@ -394,62 +393,7 @@ export const projects = [
     imageAlt: null,
   },
 
-  {
-    id: 'ai-resume-review',
-    name: 'AI Resume Review',
-    subtitle: 'Resume vs JD — what’s missing',
-    category: 'LLM · Full-stack',
-    year: '2026',
-    featured: false,
-    badge: null,
-    tagline:
-      'Paste resume and JD as text or PDF, get extracted skills, gaps, and a visual skill graph.',
-    problem:
-      'Hard to know which skills a role expects that your resume doesn’t show. Manual reading gives vague feeling, not concrete list.',
-    solution:
-      'React + Vite UI that sends resume + JD to analysis API, shows skills, gaps, and graph with Recharts + React Flow.',
-    approach: [
-      'Input: resume + JD as text or PDF, optional role hint.',
-      'Multipart request to analysis API, backend URL from env.',
-      'Backend: extraction → skill analysis → gap.',
-      'Frontend: results + graph.',
-      'Keep personal docs and keys out of git.',
-    ],
-    architecture: [
-      'Resume / JD (text or PDF)',
-      'React frontend',
-      'Analysis API',
-      'Extraction → skill → gap',
-      'Results + graph',
-    ],
-    features: [
-      'Text or PDF input',
-      'Role hint',
-      'Skill extraction + gap',
-      'Role-aware insights',
-      'Skill graph',
-      'Env-based backend URL',
-    ],
-    tech: ['React', 'Vite', 'React Flow', 'Recharts', 'FastAPI'],
-    challenges: [
-      'Turning two unstructured texts into comparable skills.',
-      'Making gap analysis actionable, not just a score.',
-      'Keeping personal docs out of repo.',
-    ],
-    engineeringNotes: [
-      'Built the React frontend and the multipart request flow.',
-      'Visual graph helped make gaps understandable — list alone wasn’t enough.',
-    ],
-    contribution: [
-      'Built React frontend, results views, skill graph.',
-      'Wired analysis request and env config.',
-    ],
-    disclaimer: 'Portfolio/hackathon project, not a deployed product.',
-    repo: 'https://github.com/rajaryan1111/AI_resume_review',
-    demo: null,
-    image: null,
-    imageAlt: null,
-  },
+
 ]
 
 export const otherWork = [
