@@ -147,12 +147,76 @@ export const projects = [
   },
 
   {
+    id: 'ai-career-agent',
+    name: 'AI Career Agent',
+    subtitle: 'A local-first desktop workspace for job applications',
+    category: 'Python · Desktop',
+    year: '2026',
+    featured: true,
+    flagship: false,
+    badge: 'Local desktop alpha',
+    tagline:
+      'Keep candidate facts, job eligibility checks, application preparation, and application history in one local desktop app — with missing evidence shown as unknown, not guessed.',
+    problem:
+      'Job tracking often spreads across spreadsheets, browser tabs, and notes. Eligibility is easy to misread when required facts are missing, and a tracker can falsely imply an application was submitted when it was only prepared.',
+    solution:
+      'A local-first Python desktop alpha for recording a candidate profile and job listings, explaining eligibility as pass / fail / unknown, shortlisting only explicit passes, preparing fact-based drafts, and tracking application attempts with evidence and guarded status changes.',
+    approach: [
+      'Keep the domain logic dependency-free and separate from the Tkinter desktop interface.',
+      'Store candidate, listing, and application-tracker records in local SQLite.',
+      'Use three-valued eligibility checks so missing evidence is not treated as a pass.',
+      'Separate skill overlap and missing-skill explanations from hard eligibility.',
+      'Guard application status transitions and require evidence before confirming a submitted application.',
+      'Provide versioned local JSON backup and restore, explicit delete controls, and automated tests.',
+    ],
+    architecture: [
+      'Tkinter desktop UI',
+      'Python domain core and validation',
+      'Local SQLite persistence',
+      'Eligibility, shortlist, preparation, and tracker state machine',
+      'Local JSON export / validated restore',
+      'Unit tests and GitHub Actions CI',
+    ],
+    features: [
+      'Manual candidate profile and job listing entry',
+      'Eligibility results: pass, fail, or unknown with explanations',
+      'Skill overlap and missing-skill explanations',
+      'Shortlist only when eligibility explicitly passes',
+      'Application readiness checklist and fact-only draft preview',
+      'Attempt history, guarded status transitions, and confirmation evidence',
+      'Versioned local backup / restore and explicit data deletion',
+    ],
+    tech: ['Python', 'Tkinter', 'SQLite', 'unittest', 'GitHub Actions'],
+    challenges: [
+      'Distinguishing unknown eligibility from a genuine pass when evidence is incomplete.',
+      'Keeping prepared, submitted, and confirmed application states distinct.',
+      'Preserving an auditable history across status changes and repeat application attempts.',
+      'Testing a desktop workflow in headless CI without pretending that visual acceptance is complete.',
+    ],
+    engineeringNotes: [
+      'The current implementation is a local desktop alpha, not an automated job-application bot.',
+      'The design keeps candidate data local by default and does not send it to a remote service.',
+      'Job-source discovery is disabled until source permissions and quality checks are resolved.',
+    ],
+    contribution: [
+      'Built the local domain logic, eligibility checks, persistence, and application-tracking workflow.',
+      'Added guarded application preparation, backup / restore validation, and automated regression coverage.',
+    ],
+    disclaimer:
+      'Early desktop alpha. Manual GUI acceptance is still outstanding. Resume parsing, live job discovery, email integration, scheduling, and application submission are not implemented.',
+    repo: 'https://github.com/rajaryan1111/ai-career-agent',
+    demo: null,
+    image: null,
+    imageAlt: null,
+  },
+
+  {
     id: 'jarvis',
     name: 'Jarvis',
     subtitle: 'Voice assistant that can see and control my Mac',
     category: 'Agents · Voice',
     year: '2025 — 2026',
-    featured: true,
+    featured: false,
     flagship: false,
     badge: null,
     tagline:

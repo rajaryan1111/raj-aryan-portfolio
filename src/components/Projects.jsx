@@ -8,6 +8,7 @@ const glyphFor = {
   'fake-id-screening': 'vision',
   'ai-resume-review': 'graph',
   'ai-adaptive-onboarding': 'stack',
+  'ai-career-agent': 'stack',
 }
 
 function Media({ project, wide }) {
