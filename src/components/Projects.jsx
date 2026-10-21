@@ -6,7 +6,6 @@ const glyphFor = {
   'h2s-dosimeter': 'vision',
   jarvis: 'voice',
   'fake-id-screening': 'vision',
-  'ai-resume-review': 'graph',
   'ai-adaptive-onboarding': 'stack',
   'ai-career-agent': 'stack',
 }
@@ -292,7 +291,7 @@ export default function Projects() {
           <div className="more-work__head">
             <h3 className="more-work__title">More work</h3>
             <p className="more-work__sub">
-              Smaller builds — vision, screening, resume analysis. Repos are public, case studies below.
+              Smaller builds — vision, screening, and agent systems. Repos are public, case studies below.
             </p>
           </div>
           <div className="projects projects--more">
