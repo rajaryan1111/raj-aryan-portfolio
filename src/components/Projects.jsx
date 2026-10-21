@@ -195,6 +195,7 @@ function SecondaryCard({ project }) {
         </h3>
 
         <p className="pcard__text">{project.tagline}</p>
+        {project.disclaimer && <p className="pcard__note">{project.disclaimer}</p>}
 
         <ul className="stack" aria-label={`${project.name} technologies`}>
           {project.tech.slice(0, 5).map((t) => (
@@ -239,6 +240,7 @@ function CompactCard({ project }) {
         <p className="pcard__text" style={{ fontSize: 14 }}>
           {project.tagline}
         </p>
+        {project.disclaimer && <p className="pcard__note">{project.disclaimer}</p>}
         <ul className="stack">
           {project.tech.slice(0, 4).map((t) => (
             <li className="chip" key={t}>
