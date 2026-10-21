@@ -325,7 +325,7 @@ export const projects = [
       'Cross-validation R² ≈ 0.915 on the current evaluation data.',
       'FastAPI: 49/49 API tests passing; offline checks: 16/16.',
     ],
-    disclaimer: 'Hackathon prototype. No safety certification. Uses synthetic data for ML eval.',
+    disclaimer: 'Validation limit: all reported ML metrics are from synthetic evaluation data; performance has not been validated on real H₂S exposure or real hardware. This prototype is not safety-certified and must not be used for worker-safety decisions.',
     repo: 'https://github.com/rajaryan1111/SIH-H2S-Dosimeter',
     repoNote: 'Fork of team repo RajanKumar44/SIH-H2S-Dosimeter',
     demo: null,
