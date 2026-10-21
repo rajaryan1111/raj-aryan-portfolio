@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:portfolio": "node scripts/check-portfolio.mjs",
+    "test": "npm run check:portfolio"
   },
   "dependencies": {
     "react": "^19.2.8",
