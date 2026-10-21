@@ -2160,3 +2160,41 @@ body {
     flex: 1 1 140px;
   }
 }
+
+
+/* Black-first palette requested: preserve the existing motion and accents */
+:root {
+  --bg: #000000;
+  --bg-elevated: #080808;
+  --bg-card: #0b0b0b;
+  --bg-hover: #141414;
+  --bg-inset: #070707;
+  --border: #202020;
+  --border-strong: #353535;
+}
+body {
+  background: #000000;
+}
+.nav,
+.nav[data-scrolled='true'] {
+  background: rgba(0, 0, 0, 0.94);
+}
+.hero__glow--one {
+  opacity: 0.045;
+}
+.hero__glow--two {
+  opacity: 0.04;
+}
+.hero__showcase {
+  background:
+    radial-gradient(ellipse at 50% 22%, rgba(113, 231, 210, 0.055), transparent 45%),
+    linear-gradient(145deg, #0b0b0b, #030303);
+}
+.pcard--flagship {
+  background: linear-gradient(145deg, #0c0c0c, #050505);
+}
+.contact {
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(113, 231, 210, 0.045), transparent 48%),
+    linear-gradient(180deg, #0b0b0b 0%, #030303 100%);
+}
