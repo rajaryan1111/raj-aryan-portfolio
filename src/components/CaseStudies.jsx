@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
-import { projects } from '../data/projects'
+import { projects as existingProjects } from '../data/projects'
+import { vendorproofProject } from '../data/vendorproof'
+
+const projects = [...existingProjects, vendorproofProject]
 import { ArrowUpRightIcon, ChevronDownIcon, GitHubIcon, InfoIcon } from './Icons'
 
 function Block({ label, children }) {

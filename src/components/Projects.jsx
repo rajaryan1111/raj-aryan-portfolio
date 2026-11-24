@@ -1,4 +1,7 @@
-import { projects } from '../data/projects'
+import { projects as existingProjects } from '../data/projects'
+import { vendorproofProject } from '../data/vendorproof'
+
+const projects = [...existingProjects, vendorproofProject]
 import { ArrowUpRightIcon, GitHubIcon, GlyphMark } from './Icons'
 
 const glyphFor = {
@@ -264,7 +267,7 @@ function CompactCard({ project }) {
 
 export default function Projects() {
   const main = projects.find((p) => p.flagship) || projects[0]
-  const secondary = projects.filter((p) => p.featured && !p.flagship).slice(0, 2)
+  const secondary = projects.filter((p) => p.featured && !p.flagship).slice(0, 3)
   const moreWork = projects.filter((p) => !p.featured && !p.flagship)
 
   return (

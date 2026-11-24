@@ -4,7 +4,8 @@ import { ArrowRightIcon, GitHubIcon, LinkedInIcon } from './Icons'
 const systems = [
   { number: '01', name: 'IS Copilot', type: 'RAG · Semantic retrieval', accent: 'cyan' },
   { number: '02', name: 'AI Career Agent', type: 'Python · Local-first desktop', accent: 'violet' },
-  { number: '03', name: 'Jarvis', type: 'Agents · Voice + vision', accent: 'lime' },
+  { number: '03', name: 'VendorProof AI', type: 'Document AI · Verification', accent: 'lime' },
+  { number: '04', name: 'Jarvis', type: 'Agents · Voice + vision', accent: 'violet' },
 ]
 
 export default function Hero() {
@@ -82,7 +83,7 @@ export default function Hero() {
           </div>
           <div className="showcase__list">
             {systems.map((system) => (
-              <a className="showcase__project" href={system.name === 'IS Copilot' ? '#case-is-copilot' : system.name === 'AI Career Agent' ? '#case-ai-career-agent' : '#case-jarvis'} key={system.number}>
+              <a className="showcase__project" href={system.name === 'IS Copilot' ? '#case-is-copilot' : system.name === 'AI Career Agent' ? '#case-ai-career-agent' : system.name === 'VendorProof AI' ? '#case-vendorproof-ai' : '#case-jarvis'} key={system.number}>
                 <span className={`showcase__number showcase__number--${system.accent}`}>{system.number}</span>
                 <span className="showcase__project-copy">
                   <strong>{system.name}</strong>
