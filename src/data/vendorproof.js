@@ -6,7 +6,7 @@ const vendorproofProject = {
   year: '2026',
   featured: true,
   flagship: false,
-  badge: 'Completed build · deployment gated',
+  badge: 'Completed project',
   tagline:
     'A supplier-verification workflow that extracts document data, checks it against defined requirements, and keeps evidence and human review in the loop.',
   problem:
