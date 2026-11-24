@@ -6,7 +6,7 @@ const vendorproofProject = {
   year: '2026',
   featured: true,
   flagship: false,
-  badge: 'Personal project · Validation release',
+  badge: 'Completed project',
   tagline:
     'A supplier-verification workflow that extracts document data, checks it against defined requirements, and keeps evidence and human review in the loop.',
   problem:
@@ -43,17 +43,16 @@ const vendorproofProject = {
     'Designing review and correction paths for uncertain or conflicting information.',
   ],
   engineeringNotes: [
-    'The local and CI readiness work has passed for the current implementation, including the core document and verification workflow.',
-    'The frontend is publicly deployed. The hosted supplier-intake workflow remains restricted because the deployed Render parser-isolation probe did not pass.',
-    'The current public release is suitable for personal validation; production supplier onboarding and real-world compliance use are not yet verified.',
+    'The core application implementation is complete, and the project checks and production frontend build pass in CI.',
+    'The public frontend is deployed. Hosted supplier intake remains disabled until the Render parser-isolation check passes; production supplier onboarding is therefore not currently available.',
   ],
   contribution: [
     'Built the full-stack workflow across document extraction, deterministic verification, evidence provenance, and human review.',
     'Implemented the React/TypeScript frontend and FastAPI/PostgreSQL backend foundations.',
-    'Worked through deployment diagnostics and kept hosted intake closed when the parser-isolation check failed.',
+    'Completed deployment diagnostics and kept hosted intake disabled when the parser-isolation check failed rather than exposing an unverified upload path.',
   ],
   disclaimer:
-    'Personal validation release. Frontend is live, but hosted supplier intake is currently restricted; production readiness and real-world verification are not claimed.',
+    'The VendorProof AI application implementation is complete. Its frontend is deployed; hosted supplier intake remains disabled pending a passing Render parser-isolation check. Production supplier onboarding is not currently available.',
   repo: 'https://github.com/rajaryan1111/vendorproof-ai',
   demo: 'https://vendorproof-ai-frontend.vercel.app/',
   image: null,
