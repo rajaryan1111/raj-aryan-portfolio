@@ -44,7 +44,6 @@ const vendorproofProject = {
   ],
   engineeringNotes: [
     'The core application implementation is complete, and the project checks and production frontend build pass in CI.',
-    'The frontend is publicly deployed. The hosted supplier-intake workflow remains restricted because the deployed Render parser-isolation probe did not pass.',
     'The public frontend is deployed. Hosted supplier intake remains disabled until the Render parser-isolation check passes; production supplier onboarding is therefore not currently available.',
   ],
   contribution: [
