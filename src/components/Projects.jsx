@@ -20,6 +20,35 @@ function Media({ project, wide }) {
     if (fallback) fallback.style.display = 'grid'
   }
 
+  if (project.id === 'vendorproof-ai') {
+    return (
+      <div className={`pcard__media vendorproof-art ${wide ? 'pcard__media--wide' : ''}`} role="img" aria-label="Illustration of VendorProof AI extracting supplier document evidence and checking it against verification rules">
+        <div className="vendorproof-art__top">
+          <span>DOCUMENT INTELLIGENCE</span>
+          <span>VP / 026</span>
+        </div>
+        <div className="vendorproof-art__workspace">
+          <div className="vendorproof-art__document">
+            <div className="vendorproof-art__doc-head"><span className="vendorproof-art__file">PDF</span><span>supplier_certificate.pdf</span></div>
+            <div className="vendorproof-art__doc-title">CERTIFICATE OF COMPLIANCE</div>
+            <div className="vendorproof-art__doc-line vendorproof-art__doc-line--long" />
+            <div className="vendorproof-art__doc-line" />
+            <div className="vendorproof-art__doc-line vendorproof-art__doc-line--short" />
+            <div className="vendorproof-art__stamp">SOURCE<br/>EVIDENCE</div>
+          </div>
+          <div className="vendorproof-art__connector" aria-hidden="true"><span /><span /><span /></div>
+          <div className="vendorproof-art__checks">
+            <div className="vendorproof-art__check-head"><span>VERIFICATION</span><span className="vendorproof-art__pulse" /></div>
+            <div className="vendorproof-art__check"><span className="vendorproof-art__check-icon">✓</span><span><b>Registration ID</b><small>Evidence located</small></span></div>
+            <div className="vendorproof-art__check"><span className="vendorproof-art__check-icon">✓</span><span><b>Expiry date</b><small>Rule evaluated</small></span></div>
+            <div className="vendorproof-art__check vendorproof-art__check--review"><span className="vendorproof-art__review-icon">↗</span><span><b>Human review</b><small>Traceable source</small></span></div>
+          </div>
+        </div>
+        <div className="vendorproof-art__footer"><span>EXTRACT</span><i /><span>VERIFY</span><i /><span>TRACE</span></div>
+      </div>
+    )
+  }
+
   if (project.image) {
     return (
       <div
