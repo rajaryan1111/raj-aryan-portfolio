@@ -20,12 +20,12 @@ npm run build
 npm run preview
 ```
 
-The project currently defines development, production-build, and preview scripts. It does not define a portfolio-specific automated test script.
+Run `npm test` to execute the portfolio content and asset checks.
 
 ## Project structure
 
 - `src/components/` — page sections and reusable UI components.
-- `src/data/projects.js` — project descriptions, architecture notes, technologies, limitations, and repository/demo links.
+- `src/data/projects.js` and `src/data/vendorproof.js` — project descriptions, architecture notes, technologies, limitations, and repository/demo links.
 - `src/data/content.js` — skills, about content, and engineering principles.
 - `src/data/profile.js` — profile, contact, and social links.
 - `src/styles/index.css` — design tokens, responsive layout, animations, and reduced-motion styles.
@@ -34,7 +34,7 @@ The project currently defines development, production-build, and preview scripts
 
 ## Featured work
 
-- **VendorProof AI** — a full-stack supplier-document verification workflow with OCR/PDF extraction, deterministic checks, evidence provenance, and human review. Its frontend is deployed for personal validation; hosted supplier intake remains restricted after a Render parser-isolation probe failed, so production readiness is not claimed.
+- **VendorProof AI** — a full-stack supplier-document verification workflow with OCR/PDF extraction, deterministic checks, evidence provenance, and human review. The core application implementation is complete and its frontend is deployed. Hosted supplier intake remains disabled until the Render parser-isolation check passes; production supplier onboarding is not currently available.
 - **IS Copilot** — a demonstration tool for finding relevant Indian Standards from procurement requirements. Its data is a labelled demo dataset; it is not an official BIS service, and results must be checked against official sources.
 - **AI Career Agent** — an early, local-first desktop alpha for eligibility checks and application tracking. It is not an automated job-application bot; live discovery and application submission are not implemented.
 - **Jarvis** — a personal macOS-oriented voice and vision assistant; it is not packaged for general distribution.
