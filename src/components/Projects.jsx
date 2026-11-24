@@ -1,8 +1,8 @@
+import { ArrowUpRightIcon, GitHubIcon, GlyphMark } from './Icons'
 import { projects as existingProjects } from '../data/projects'
 import { vendorproofProject } from '../data/vendorproof'
 
 const projects = [...existingProjects, vendorproofProject]
-import { ArrowUpRightIcon, GitHubIcon, GlyphMark } from './Icons'
 
 const glyphFor = {
   'is-copilot': 'document',
