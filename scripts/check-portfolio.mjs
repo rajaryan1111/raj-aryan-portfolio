@@ -3,11 +3,13 @@ import { join } from 'node:path'
 
 const root = process.cwd()
 const projectsPath = join(root, 'src/data/projects.js')
+const vendorproofPath = join(root, 'src/data/vendorproof.js')
 const projectCardsPath = join(root, 'src/components/Projects.jsx')
 const resumePath = join(root, 'public/resume.html')
 const htmlPath = join(root, 'index.html')
 
 const projects = readFileSync(projectsPath, 'utf8')
+const vendorproof = readFileSync(vendorproofPath, 'utf8')
 const cards = readFileSync(projectCardsPath, 'utf8')
 const resume = readFileSync(resumePath, 'utf8')
 const html = readFileSync(htmlPath, 'utf8')
@@ -19,6 +21,9 @@ function check(condition, message) {
 
 const ids = [...projects.matchAll(/\bid:\s*'([^']+)'/g)].map((match) => match[1])
 check(ids.length > 0, 'No project IDs found in src/data/projects.js')
+check(/id:\\s*'vendorproof-ai'/.test(vendorproof), 'VendorProof AI must have a dedicated project record')
+check(/badge:\\s*'Completed build/.test(vendorproof), 'VendorProof AI must be presented as a completed build')
+check(/hosted supplier intake remains disabled/i.test(vendorproof), 'VendorProof AI must disclose the hosted intake limitation')
 check(new Set(ids).size === ids.length, 'Project IDs must be unique')
 check(!projects.includes('ai-resume-review') && !cards.includes('ai-resume-review'), 'Removed AI Resume Review is still referenced')
 
